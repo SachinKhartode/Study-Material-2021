@@ -1,0 +1,65 @@
+What is Cloud?
+What is azure cloud?
+What is azure virtual machine?
+What is azure app service?
+What are azure functions?
+What is azure service fabric?
+What is azure storage service?
+What is azure SQL DB?
+How to move existing on-premises data to azure? -use azure data factory.
+What is azure container service?
+What is azure container registry?
+How to use containers in your application in azure? – AKS
+What is azure Kubernetes service?
+How to authenticate your application client in azure? – app service authentication or azure AD
+What is azure active directory?
+What is app service authentication?
+How to monitor performance, watch for issues, or how customers are using your app in azure? – application insights, application monitor
+What are azure application insights?
+What is azure application monitor?
+Does azure integrate with other popular DevOps tools? – yes Jenkins, Github, Puppet, Chef, TeamCity, Ansible, Azure DevOps.
+What are Azure Regions?
+How to choose best region for your application?
+What is advantage of multi region application? – to manage disasters, internet go down.
+How to manage application and projection on azure? Az CLI or AZ portal
+What is azure portal? Web application, manage (create manage remove) resources, access subscription setting and billing info.
+What is azure resource manager? manage (create manage remove) resources
+What is azure account?
+What is azure subscription?
+What is Resource Group?
+What is role base access control (RBAC)?
+What are Tags? - Assign unique name to resources to tracking and monitoring
+What is difference between SAAS, PAAS, IAAS?
+What is the deployment environment provided by Azure? Staging and production 
+What is scaling? Advantages of it?
+What is difference between Windows Active Directory and Azure Active Directory?
+What is the type of Queues offered by Azure? Storage queue, Service bus queue
+What is azure federation service in azure SQL? To scale up SQL databases 
+What are different storage types offered by Azure? Blob, Table, Queue, File
+
+Event Hub
+API Management Service
+What Is device twin?
+Its Json document include device id, tags, desired properties and reported properties. Desired properties used to set the properties from cloud application, and reported properties used to get the values reported by device.
+
+What is INO files?
+An INO file is a software program created for use with Arduino an open-source electronics prototyping platform. It contains source code written in the Arduino programming language. INO files are used to control Arduino circuit boards.
+What is azure Redis Cache?
+Azure Cache for Redis is a fully managed, in-memory cache data store used as database. that enables high-performance and scalable architectures. Use it to create cloud or hybrid deployments that handle millions of requests per second at sub-millisecond latency—all with the configuration, security and availability benefits of a managed service.
+Install-Package StackExchange.Redis 
+Log into Azure port, go to Databases >> Redis Cache >> Create.
+Add Redis Cache connection string into the appsettings.dev.json
+
+What is SignalR?
+
+What is IOT?
+The Internet of Things (IoT) refers to a system of internet-connected devices that are able to collect and transfer data over a internet without human intervention.
+What is Azure IOT Hub?
+IoT Hub is a managed service hosted in the cloud that acts as a central message hub for communications in both directions between an IoT application to its attached devices and vice-versa.
+You can connect millions of devices and their backend solutions reliably and securely. Almost any device can be connected to an IoT Hub.
+You can send messages from device-to-cloud telemetry and vice-versa, You can control your devices from the cloud.
+
+
+
+
+DevOps promotes a fully automated continuous integration and deployment pipeline to enable frequent releases, while Agile provides the ability to rapidly adapt to the changing requirements and better collaboration between different smaller teams.
