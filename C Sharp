@@ -1,0 +1,341 @@
+What is Private Constructor?
+This is the constructor whose access modifier is private. Private constructor is used to prevent a class to be instantiated. But, if a class has other public constructors, then that can be instantiated. A class can have multiple private constructor and can call it by another constructor.
+For example: - 
+Class A
+{
+      int a;
+      private A()
+      {              
+       }
+       public A(int b) : this()  // Calling private constructor by another constructor.
+       {
+                this.a=b;
+        }
+}
+What is Static Constructor?
+Static constructor is used to initialize static members of a class. It is called by CLR, not by creating instance of the class. As it is called by CLR, it is not certain when it is called. But it is called when class is loaded. It cannot be explicitly called by code. Static constructor has no any parameter. A class can have only one static constructor.
+
+Static Constructor
+1.	Used to initialize the static members of a class.
+2.	Cannot access non-static members.
+3.	Executes before the first instance of a class. We cannot determine the time of execution.
+4.	Executes by the CLR not by the object of a class.
+5.	There are no parameterized static constructors since it is handled by the CLR not by the object.
+6.	Time of execution might be at the loading of contained assembly.
+7.	Static constructor is called before the first instance of class is created, whereas private constructor is called after the first instance of class is created.
+8.	Static constructor will be executed only once, whereas private constructor is executed every time, whenever it is called.
+Private Constructor
+9.	Used to prevent class to be instantiated and to be inherited.
+10.	Used whenever a class contains only static members.
+11.	Private constructor can be called by another constructors.
+12.	Mostly used in singleton pattern
+What is a class?
+Classes are the user defined data types that represent the state and behavior of an object. State represents the properties and behavior is the action that objects can perform.
+
+Classes can be declared using the following access specifiers that limit the accessibility of classes to other classes, however some classes do not require any access modifiers.
+1.	Public
+2.	Private
+3.	Protected
+4.	Internal
+5.	Protected internal.
+Some Key points about classes
+•	Classes are reference types that hold the object created dynamically in a heap.
+•	All classes have a base type of System.Object.
+•	The default access modifier of a class is Internal.
+•	The default access modifier of methods and variables is Private.
+•	Directly inside the namespaces declarations of private classes are not allowed.
+What are access modifiers?
+Access modifiers are used to implement encapsulation of OOP, it defines the scope and accessibility of class members.
+Modifier	Description
+public	There are no restrictions on accessing public members.
+private	Access is limited to within the class definition. This is the default access modifier type if none is formally specified
+protected	Access is limited to within the class definition and any class that inherits from the class
+internal	Access is limited exclusively to classes defined within the current project assembly
+protected internal	Access is limited to the current assembly and types derived from the containing class. All members in current project and all members in derived class can access the variables.   
+private protected	Access is limited to the containing class or types derived from the containing class within the current assembly.
+
+What is default access modifier in c#?
+Default access modifier of class is Internal. And private for class member.
+
+What an Abstract class is
+An Abstract class is a class that provides a common definition to the subclasses and this is the type of class whose object is not created.
+Some key points of Abstract classes are:
+•	Abstract classes are declared using the abstract keyword.
+•	We cannot create an object of an abstract class.
+•	If you want to use it then it must be inherited in a subclass.
+•	An Abstract class contains both abstract and non-abstract methods.
+•	The methods inside the abstract class can either have an implementation or no implementation.
+•	We can inherit two abstract classes; in this case the base class method implementation is optional. 
+•	An Abstract class has only one subclass.
+•	Methods inside the abstract class cannot be private.
+•	If there is at least one method abstract in a class, then the class must be abstract.
+Partial Classes
+It is a type of class that allows dividing their properties, methods and events into multiple source files and at compile time these files are combined into a single class.
+The following are some key points:
+•	All the parts of the partial class must be prefixed with the partial keyword.
+•	If you seal a specific part of a partial class then the entire class is sealed, the same as for an abstract class.
+•	Inheritance cannot be applied on partial classes.
+•	The classes that are written in two class files are combined together at run time.
+Sealed Class
+A Sealed class is a class that cannot be inherited and used to restrict the properties. 
+The following are some key points:
+•	A Sealed class is created using the sealed keyword.
+•	Access modifiers are not applied to a sealed class.
+•	To access the sealed members, we must create an object of the class.
+
+Static Class
+It is the type of class that cannot be instantiated, in other words we cannot create an object of that class using the new keyword, such that class members can be called directly using their class name.
+The following are some key points:
+•	Created using the static keyword.
+•	Inside a static class only static members are allowed, in other words everything inside the static class must be static.
+•	We cannot create an object of the static class.
+•	A Static class cannot be inherited.
+•	It allows only a static constructor to be declared.
+•	The methods of the static class can be called using the class name without creating the instance.
+What Differences between IEnumerable and IQueryable?
+IEnumerable
+1.	IEnumerable exists in the System.Collections namespace.
+2.	IEnumerable is suitable for querying data from in-memory collections like List, Array and so on. 
+3.	While querying data from the database, IEnumerable executes "select query" on the server-side, loads data in-memory on the client-side and then filters the data.  
+4.	IEnumerable is beneficial for LINQ to Object and LINQ to XML queries.
+IQueryable
+1.	IQueryable exists in the System.Linq Namespace. 
+2.	IQueryable is suitable for querying data from out-memory (like remote database, service) collections. 
+3.	While querying data from a database, IQueryable executes a "select query" on server-side with all filters. 
+4.	IQueryable is beneficial for LINQ to SQL queries.
+
+Abstract class vs Interface
+1.	Multiple inheritance: Any class can implement more than one interface but can only inherit from one abstract class.
+2.	Default implementation: An interface cannot provide any code, just the signature. An abstract class can provide, concreate (abstract and not abstract) code, default code and that have to be overridden.
+3.	Access Modifiers: An interface cannot have access modifiers, by default all members are public. An abstract class can contain access modifiers for the methods, properties and fields.
+4.	Fields and Constants: No fields can be defined in interfaces. An abstract class can have fields and constants defined
+
+Interface is contract between client and service provider and client must have to implement that contract where control goes to client. Whereas in Abstract class control remain with service provider.
+
+Constant vs read only vs static vs static read only?
+Constant: defined at the time of declaration, can’t modified, by default constants are static, need to initialize at compile time, so Its compile time constant.
+Read-only: Initialized at the time of declaration or runtime in non-static constructor only once.
+Static Read-only: Initialized at the time of declaration or runtime in static constructor only once.
+Static: used to declare static member of class, if class set as static all members become static, only static fields of the class can be accessed in static method
+Note: only one instance of static variable is created in memory
+
+Dynamic vs Object Vs Var
+Object: type casting (boxing unboxing) required to get the value back, casting error shows at runtime, any type of value can be initialized to object
+Var: does not require boxing and unboxing, same type of value can be initialized to var, type evaluate at compile time. 
+Dynamic: does not require boxing and unboxing, does not cause any problem while getting value back into type, any type of value can be initialized to dynamic, type evaluate at runtime, suffering performance issue.
+
+What is Param Keyword in C#?
+Param keyword used while declaring a method, you are not sure of the number of arguments passed as a parameter. 
+eg. public void ADDParameters(params string[] arguemnts){ }
+
+What is serialization in c#?
+Serialization is the process of converting object into byte stream. The reverse process of serialization is called deserialization. 
+Serialization is internally used in remote applications. Serialization is process used to transform object over network or out of your process boundary.
+
+Binary serializer vs XML serializer
+Binary serializer use BinaryFormater to serialize and de-serialize object.
+XML serializer use XMLSerilizer to serialize and de-serialize object.
+Binary serialization can serialize both public and private members with metadata.
+The XML serializer just serializes to a (shollw serilization) schema and only serializes the public fields and values of the object and no type of information.
+
+Partial class in different namespaces possible?
+A class's name includes its namespace, so name1.Foo and name1.name2. Foo are two completely separate types. So, the short answer to your question is: No.
+
+Can we change class property name in XML Sterilization?
+Yes, using XmlTypeAttribute.TypeName
+
+How to make normal class as Singleton class?
+Add on public static method in class which will return class instance, and add private constructor to the class or sealed it.
+1.	public sealed class Singleton1 {  
+2.	    private Singleton1() {}  
+3.	    private static Singleton1 instance = null;  
+4.	    public static Singleton1 Instance {  
+5.	        get {  
+6.	            if (instance == null) {  
+7.	                instance = new Singleton1();  
+8.	            }  
+9.	            return instance;  
+10.	        }  
+11.	    }  
+12.	}  
+ Thread Safe
+1.	public sealed class Singleton2 {  
+2.	    Singleton2() {}  
+3.	    private static readonly object lock = new object();  
+4.	    private static Singleton2 instance = null;  
+5.	    public static Singleton2 Instance {  
+6.	        get {  
+7.	            lock(lock) {  
+8.	                if (instance == null) {  
+9.	                    instance = new Singleton2();  
+10.	                }  
+11.	                return instance;  
+12.	            }  
+13.	        }  
+14.	    }  
+15.	}  
+
+
+Lazy loading in .net?
+Object on Demand is also called Lazy loading pattern, Lazy loading delays the initialization of object.
+
+Eager loading in .net?
+Eager loading is the process whereby a query for one type of entity also loads related entities as part of the query, so that we don't need to execute a separate query for related entities. Eager loading is achieved using the Include () method.
+
+What is runtime polymorphism in C#?
+Compile time polymorphism is achieved by method overloading and operator overloading in C#. It is also known as static binding or early binding. Runtime polymorphism in achieved by method overriding which is also known as dynamic binding or late binding.
+
+Why do we use polymorphism?
+Polymorphism is considered one of the important features of Object-Oriented Programming. Polymorphism allows us to perform a single action in different ways. In other words, polymorphism allows you to define one interface and have multiple implementations.
+
+What is Overloading and Overriding? 
+When two or more methods in the same class have the same name but different parameters, it's called Overloading. When the method signature (name and parameters) are the same in the superclass and the child class, it's called Overriding.
+
+Difference between method overloading and method overriding.
+Sr. No	Method Overloading	Method Overriding
+1.	Creating more than one method or function having same name but different signatures or the parameter in the same class is called method overloading.	Creating a method in the derived class with the same signature as a method in the base class is called as method overriding
+2.	It is called the compile time polymorphism	It is called runtime polymorphism
+3.	It has the same method name but with different signatures or the parameters	It must have same method name as well as the signatures or the parameters.
+4.	Method overloading does not need inheritance	Method overriding needs inheritance
+5.	Method overloading is possible in single class only	Method overriding needs hierarchy level of the classes i.e. one parent class and other child class.
+6.	Access modifier can be any	Access modifier must be public.
+7.	Method overloading is also called early binding.	Method overriding is also called late binding.
+
+String is value type or reference type?
+String is a reference type, but it is immutable. It means once we assigned a value, it cannot be changed. If we change a string value, then the compiler creates a new string object in the memory and point a variable to the new memory location.
+
+Is string class or struct?
+String is class type.
+
+Difference between Stack and Heap Memory in C#
+Category	Stack Memory	Heap Memory
+What is Stack & Heap?	It is an array of memory.
+
+It is a LIFO (Last In First Out) data structure.
+
+In it data can be added to and deleted only from the top of it.	It is an area of memory where chunks are allocated to store certain kinds of data objects.
+In it data can be stored and removed in any order.
+Type 
+
+Stored	value type 
+Integral Types, Primitive Types and only References of the Objects 
+bool, byte, char, decimal, double, enum, float, int, long, sbyte, short, struct, uint, ulong, ushort	reference types
+class, interface, delegate, object, string
+Memory Allocation	Memory allocation is Static	Memory allocation is Dynamic
+How is it Stored? 	It is stored Directly	It is stored indirectly
+Is Variable Resized? 	Variables can’t be Resized	Variables can be Resized
+Access Speed 	Its access is fast	Its access is Slow
+
+
+What design patterns you worked on?
+What are Session states modes in asp.net?
+InProc – stored in IIS server by default. Its fast as its stored on same server memory but reduce performance if more user logged into application. Can’t support web garden scenario.
+Out Proc - (state server, SQL server) – session can store on separate web server or can be in SQL server. 
+
+When to use SQL server and state server session in .net.
+These options used for load balancing purpose.
+
+What is web garden?
+Web garden is a scenario in which a single machine has multiple asp.net worker processes running simultaneously. A web garden is utilized on a multi-core web server. To achieve more robust execution and processing
+
+What is web farm?
+A web farm is a group of two or more web servers (or nodes) that host multiple instances of an app. When requests from users arrive to a web farm, a load balancer distributes the requests to the web farm's nodes.
+What is application pool?
+Application pools can contain one or more worker processes. Each worker process represents work being done for a Web site, Web application, or Web service. You can create a Web garden by enabling multiple worker processes to run in a single application pool. In IIS 7 and later, each application pool uses one of two.
+
+How to get user count of portal accessing without their login to application.
+1.	void Session_Start(object sender, EventArgs e)   
+2.	{  
+3.	  Application.Lock();  
+4.	  Application["count"] = (int)Application["count "] + 1;  
+5.	  Application.UnLock();  
+6.	}  
+7.	void Session_End(object sender, EventArgs e)   
+8.	{  
+9.	   Application.Lock();  
+10.	Application["count "] = (int)Application["count "] - 1;  
+11.	Application.UnLock();
+12.	}  
+But in Asp.Net core need to be create some custom middleware to get the session id from current HTTP context and store it somewhere in ConcurrentDictionary (thread-safe collection) or database and remove it on session expiration. 
+
+Interface and abstract class difference
+Finalize and dispose difference.
+The main difference between dispose() and finalize() is that the method dispose() has to be explicitly invoked by the user whereas, the method finalize() is invoked by the garbage collector, just before the object is destroyed.
+
+What is garbage collection in c#?
+The garbage collector (GC) manages the allocation and release of memory. The garbage collector serves as an automatic memory manager. You do not need to know how to allocate and release memory or manage the lifetime of the objects that use that memory. ... This process is known as garbage collection.
+
+What is generation in GC?
+Garbage collection primarily occurs with the reclamation of short-lived objects. To optimize the performance of the garbage collector, the managed heap is divided into three generations, 0, 1, and 2, so it can handle long-lived and short-lived objects separately.
+
+Exception Handling in .Net core.
+To handle exceptions and display developer friendly message in development environment, we need to install Microsoft.AspNetCore.Diagnostics NuGet package and add middleware in the Configure() method and to display user friendly message don’t require Microsoft.AspNetCore.Diagnostics instead you can develop you own custom middleware to handle user friendly messages.
+1.	    if (env.IsDevelopment())  
+2.	    {  
+3.	        app.UseDeveloperExceptionPage();  
+4.	    }  
+5.	    else  
+6.	    {  
+7.	        app.UseExceptionHandler("/Home/Error");  
+8.	    } 
+what is delegate in c#?
+Delegate are function pointers hold the reference of the method with a particular parameter list and return type. You can invoke (or call) the method through the delegate instance.
+
+What is multicast delegate?
+A Multicast Delegate is a delegate that holds the references of more than one function. When we invoke the multicast delegate, then all the functions which are referenced by the delegate are going to be invoked. If you want to call multiple methods using a delegate, then all the method signatures should be the same.
+
+What are generic Delegates:
+Func – This delegate is used as a function pointer for the method which can take parameters (up to 16)and at least return some type of value. Some of the examples are as follows:
+Func<int,int,int> f = delegate(int x, int y){ return (x+y); };  
+int result = f(1,2);
+Predicate – Predicates are the comparison delegates which take only one generic argument and return bool. These delegates are generally used for the comparison related operations.
+Predicate<int,int > p = delegate(int x, int y){ return (x>y); };  
+bool result = p(1,2);
+
+Action – This delegate is used as a function pointer for the method which can take parameters (up to 16) and returns void. Some of the examples are as follows:
+Action<int > a = delegate(int x){ Console.writeline(x); };  
+a(1);
+
+What is difference between put and patch http verbs/operations?
+Put is not just update its also used to replace resource completely. Patch is used to update resource partially. Put is idempotent whereas Patch is not idempotent but can be made as idempotent. Idempotent means it affects the result.
+
+What is content negotiation?
+Content-type: which requests to API to represent data in this type. Accept: The acceptable media types for the response, such as “application/json,” “application/xml,” or a custom media type such as "application/vnd ".
+OR
+Its contract between API consumer and web API to represent data in acceptable media format as response it can be json or xml or even custom format also.
+
+What is Liskov Substitution in SOLID?
+What is SOLID principle?
+https://www.codeproject.com/Tips/1033646/SOLID-Principle-with-Csharp-Example
+•	S is single responsibility principle (SRP)
+A class should take one responsibility, e.g., InsertEmployee no other oprations.
+•	O stands for open closed principle (OCP)
+Open for extension close for modification e.g., report generation for PDF, Excel, Text.
+Instead of writing if-else condition in same class to generate PDF, Excel, Text report create one IReportGeneration interface and implement interface methods in individual classes.
+•	L Liskov substitution principle (LSP)
+Child class should not break parent class’s type definition and behavior. – Derived class have to implement all the methods of implemented interface to solve this issue use interface segregation.
+•	I interface segregation principle (ISP)
+Client should not be forced to use an interface which is irrelevant to it. – Instead of creating one interface with multiple method and implementing it in different class, create separate interface and implement those in multiple classes. 
+•	D Dependency inversion principle (DIP)
+This principle tells you not to write any tightly coupled code because that become very tedious task to maintain code when the application is growing bigger and bigger. If a class depends on another class, then we need to change one class if something changes in that dependent class.
+Write loosely coupled code using dependency injection which is highly maintainable. Eg. To send notification though SMS and Email create implement IMessenger interface in Notification class by passing IMessenger dependency through constructor. 
+
+
+What is difference between Threading and TPL (Task Parallel library)
+When we use threading, you need to take care of pooling and need to ensure that thread executes on multiple processors, data and task parallelism etc. When you use TPL all these things are taken care of so that you concentrate on the work rather than these lower-level technical details. 
+OR
+TPL handles the partitioning of the work, the scheduling of threads on the ThreadPool, cancellation support, state management, and other low-level details.
+What is a lock in C#?
+C# Lock keyword ensures that one thread is executing a piece of code at one time. The lock keyword ensures that one thread does not enter a critical section of code while another thread is in that critical section. Lock is a keyword shortcut for acquiring a lock for the piece of code for only one thread.
+
+What is Binary Search?
+Binary search works on a sorted array. The value is compared with the middle element of the array. If equality is not found, then the half part is eliminated in which the value is not there.
+
+What is async and await in C#?
+Async and await in C# are the code markers, which marks code positions from where the control should resume after a task completes.
+
+What is extension method?
+What is indexer in c#?
+https://www.youtube.com/watch?v=BKynEBPqiIM
+
+
