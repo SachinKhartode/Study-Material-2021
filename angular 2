@@ -1,0 +1,273 @@
+1.	What is Angular?
+Angular 2/4/5 is an open source JavaScript framework for building web applications and apps in JavaScript, html, and TypeScript, which is a superset of JavaScript. Angular provides built-in features for animation, http service, and materials which has features such as auto-complete, navigation, toolbar, menus, etc. The code is written in TypeScript, which compiles to JavaScript and displays the same in the browser.
+
+2.	Difference between AngularJS and Angular 2
+•	The first version of Angular was released in the year of 2010. Some people call this as AngularJS and some people call as Angular 1. But it is officially named as AngularJS.
+•	The Angular 2 was released in the year of 2016. The important point to note is that Angular 2 is not a simple upgrade of AngularJS. Angular 2 is completely rewritten from scratch and as a result, the ways we write a code in AngularJS and Angular 2 are completely different.
+•	AngularJS is completely based on controllers and the View communicates using $scope whereas Angular 2 is completely a component-based approach. In Angular 2, both, controller and $scope are completely gone. Angular 2 is completely based on the component. Components are the building blocks of an Angular 2 application. The advantage of the Component-based approach is that it facilitates greater code reuse.
+•	As compared to AngularJS, in Angular 2, the communication among components is very easy. The components can be reused anywhere in the application without much effort.
+•	In Angular 2, from the unit testing standpoint, the use of components makes the Angular 2 application more testable with minimal effort.
+•	From a performance standpoint, Angular 2 is 5 times faster compared to AngularJS.
+•	AngularJS doesn't support for mobile devices, whereas Angular 2 is designed by keeping in mind to support mobile devices.
+•	Angular 2 has more language choices (TypeScript, JavaScript, Dart, PureScript and Elm etc.)
+
+3.	Provider Vs View Provider:
+Providers: If we want to have one instance of a service per component, and shared with all the components children (ViewChildren and ContentChildren), we configure it on the providers property on our component decorator.
+ViewProviders: If we want to have one instance of a service per component, and shared with only the components view children and not the components content children, we configure it on the viewProviders property on our component decorator.
+When we use viewProviders the component creates an injector which is only used by the current component and its viewchildren only. 
+If you are a contentchild then it uses the injector in NgModule to resolve the dependency.
+Note: viewprovider used when we want share instance of service with view children but not with content children.
+4.	Promise vs Observable
+
+Promises
+1.	Definition: Helps you run functions asynchronously, and use their return values (or exceptions) but only once when executed.
+2.	Not Lazy
+3.	Not cancellable. The two possible decisions are
+•	Reject
+•	Resolve
+4.	Cannot be retried(Promises should have access to the original function that returned the promise in order to have a retry capability, which is a bad practice)
+5.	search(term:string) {
+6.	  let promise = new Promise((resolve, reject) => {
+7.	    let apiURL = `${this.apiRoot}?term=${term}&media=music&limit=20`;
+8.	    this.httpClient.get(apiURL)
+9.	      .toPromise()
+10.	      .then(
+11.	        res => { // Success
+12.	               this.results = res.results.map(item => {
+13.	                  return new SearchItem(
+14.	                      item.trackName,
+15.	                      item.artistName,
+16.	                      item.trackViewUrl,
+17.	                      item.artworkUrl30,
+18.	                      item.artistId
+19.	                  );
+20.	                });
+21.	                // this.results = res.results;
+22.	                resolve();
+23.	        },
+24.	        msg => { // Error
+25.	        reject(msg);
+26.	        }
+27.	      );
+28.	  });
+29.	  return promise;
+30.	}
+31.	}
+
+Observables
+1.	Definition: Helps you run functions asynchronously, and use their return values in a continuous sequence (multiple times) when executed.
+2.	By default, it is Lazy as it emits values when time progresses.
+3.	Has a lot of operator which simplifies coding effort.
+4.	One operator retry can be used to retry whenever needed, also if we need to retry the observable based on some conditions retryWhen can be used.
+
+5.	What is ES6 
+ECMA stands for - European Computer Manufacturer's Association. ECMAScript is a standard for a scripting language. It specifies the core features that a scripting language should provide and how those features should be implemented. Javascript was originally created at Netscape, and they wanted to standardize the language. So, they submitted the language to the European Computer Manufacturer’s Association (ECMA) for standardization. But, there were trademark issues with the name Javascript, and the standard became called ECMAScript, which is the name it holds today as well.
+EcmaScript (ES) is a standard for scripting language. It is standard agreement between browser manufactures and EcmaScript. 
+6.	ES6 Features
+1.	Default Parameters
+2.	Template string with within back-stick characters, and Variable substitution
+3.	Multi-line Strings
+4.	Destructuring Assignment
+5.	Arrow Functions
+6.	Block-Scoped Constructs Let and Const
+
+7.	Change Detection Strategy in Angular
+Change Detection means updating the DOM whenever data is changed. Angular provides two strategies for Change Detection.
+In its default strategy, whenever any data is mutated or changed, Angular will run the change detector to update the DOM. 
+In the onPush strategy, Angular will only run the change detector when a new reference is passed to @Input() data.
+To update the DOM with updated data, Angular provides its own change detector to each component, which is responsible for detecting change and updating the DOM.
+	https://dzone.com/articles/how-to-use-change-detection-in-angular
+8.	ViewChild vs ViewChildren vs ContentChild vs ContentChildren
+	View Child:
+View Child is Property decorator. It is used to get the first element or the directive form view DOM where selector is matching. If the view DOM changed and new child matched with the selector then the view child property will be updated.
+View query set before the ngAfterViewInit callback is called.
+					OR
+@ViewChild This decorator tells Angular how to find the child component that we want to bind to this property.
+A @ViewChild decorator means, search inside this components template, its view, for this child component.
+The parameter we pass as the first argument to @ViewChild is the type of the component we want to search for, if it finds more than one it will just give us the first one it finds.
+If we try to print out the reference of viewchield in the constructor, undefined will be printed out.
+That’s because by the time the constructor is called it haven’t rendered the children yet. We render in a tree down approach so when a parent component is getting constructed it means the children are not yet created.
+We can however hook into the lifecycle of the component at the point the view children have been created and that’s with the ngAfterViewInit hook.
+
+	View Children: 
+View Children is property decorator, it’s used to get the QueryList of elements or directives from the view DOM. Any time a child element is added, removed, or moved, the query list will be updated, and the changes in observable of the query list will emit a new value.
+View query list set before the ngAfterViewInit callback is called
+
+	Content Child: 
+ContentChild is property decorator, it’s used to get the first element or the directive from the content DOM where selector matching. If the content DOM changed and a new child matched with selector then the content child property will be updated.
+Content query set before the ngAfterContentInit callback is called.
+					 OR
+The concept of a content child is similar to that of a view child but the content children of the given component are the child elements that are projected into the component from the host component.
+
+	Content Children: 
+ContentChildren is property decorator. It’s used get the QueryList of elements or directives from the content DOM. Any time a child element or directive is added or removed, the query list will be updated, and changes in observable of the query list will emit a new value.
+Content query list set before the ngAfterContentInit callback is called.
+Note: Any component, directive, or element which is part of a template is ViewChild and any component or element which is projected (content between child component start and end tag are known as content child) in to the template is ContentChild.
+9.	When to and How to use setter in @viewChild OR Can we set parent component local variable from child component or directive?
+To set value to parent component variable from directive/child component
+public extraIngredient: string; //Local variable in parent component
+
+@ViewChild(BaconDirective)
+set appBacon(directive: BaconDirective) 
+{
+    this.extraIngredient = directive.ingredient; // ingredient is variable from BaconDirective
+};
+
+10.	Custom event with Boolean argument in angular
+@Output() myEvent = new EventEmitter<boolean>();
+
+myFunc(value: boolean) {
+	this.myEvent.emit(value);
+}
+
+11.	What is EventEmmiter in angular, How to use it properly?
+EventEmitter is an Angular abstraction used for emitting custom Events in components and register handlers for those events by subscribing to an instance
+@Component({
+    selector : 'child',
+    template : `
+        <button (click)="sendNotification()">Notify my parent!</button>
+    `
+})
+class Child {
+    @Output() notifyParent: EventEmitter<any> = new EventEmitter();
+    sendNotification() {
+        this.notifyParent.emit('Some value to send to the parent');
+    }
+}
+
+@Component({
+    selector : 'parent',
+    template : `
+        <child (notifyParent)="getNotification($event)"></child>
+    `
+})
+class Parent {
+    getNotification(emitedValue) {
+        // Do something with the notification (emitedValue) sent by the child!
+    }
+}
+
+12.	What is Event binding in angular 2?
+Event binding is a data binding from an element to a component. Data obtained from user actions such as keystrokes, mouse movements, clicks, and touches can be bound to component property using event binding.
+<button (click)="sendNotification()">Notify my parent!</button>
+13.	Custom CSS class binding in angular 2
+class.className
+<div [class.activeClass]="isActive">TEST</div>
+<div [class.td-green]="gender=='male'">TEST</div>  
+NgClass
+<div [ngClass]="myClasses">TEST</div>
+<div [ngClass]="{'td-green' : gender=='male'}">TEST</td>  
+14.	Custom style binding in angular 2
+Style.StyleProperty
+<div [style.background-color]="Red">TEST</div>
+<div [style.background-color]="gender=='male' ?  'Red' : 'Green' ">TEST</div>  
+NgStyle
+<div [ngStyle]="myStylesClass">TEST</div>
+<div [ngStyle]="{'background-color': 'lime', 'font-size': '20px', 'font-weight': 'bold'}">TEST</div>  
+15.	What is @HostListener in angular
+@HostListener lets you listen for events on the host element or component in custom directives in angular
+@HostListener('keydown') setColor() {
+        	//do something
+	this.color = "Red";
+  }
+16.	What is @HostBinding in angular
+The @HostBinding() decorator allows you to set the properties of the host element from the directive class.
+@HostBinding('style.color') color : string; 
+@HostListener('keydown') setColor() {
+	this.color = "Red";
+  }
+17.	Routing Strategies in angular 
+A.	HashLocationStrategy : 
+To enable HashLocationStrategy in an Angular application we pass {useHash: true} when we are providing our routes with RouterModule.
+RouterModule.forRoot(routes, {useHash: true})
+URL can contain some data prepended with a # character. It’s normally used so that people can link to a particular section in a HTML page for example: 
+<a name="routing-strategies"></a>
+Url become like 
+http://somedomain.com/page#routing-strategies
+Then the browser would open somedomain.com/page and then scroll down so that the 
+<a name="routing-strategies"></a> tag is at the top of the page.
+However browser makes a GET request to https://somedomain.com/page/ only. URL with hash fragment never gets sent to the server. Therefore it’s an ideal solution for implementing client side routing.
+
+B.	PathLocationStrategy: 
+This is the default strategy in Angular so we need to do nothing to enable it. 
+It takes advantage of a relatively new HTML5 API called pushstate.
+By using pushstate we can change the URL and not have the browser request the page from the server and without needing to use a hash fragment.
+So if we were at   
+localhost:4040/search
+By using the pushstate API we can change the URL to
+localhost:4040/artist/1234/tracks
+And the browser won’t make a GET request to the server for /artist/1234/tracks
+But if we then reloaded the page or bookmarked and opened it later the browser would make a request to the server for e.g. localhost:4040/artist/1234/tracks
+By using a hash fragment the server never needs to know about any application URL, it will only ever get asked for the root page and it will only ever return the root page.
+So with PathLocationStrategy we need to co-operate with a server side that supports this functionality
+When using the PathLocationStrategy we need to tell the browser what will be prefixed to the requested path to generate the URL.
+<base href='/my/app'/>
+
+18.	What is Angular Universal OR SSR Server Side Rendering (SSR) in angular? 
+A normal Angular application executes in the browser, rendering pages in the DOM in response to user actions. Angular Universal generates static application pages on the server through a process called server-side rendering (SSR). It can generate and serve those pages in response to requests from browsers.
+Angular Universal, it is a Server Side Rendering (SSR) tool that allows you to render your Angular app from a server. Main benefits of SSR are SEO results and reducing initial page load time.
+We can build an app that rendered the page on the server side and returned that to the client, and from that point on let the client handle the routing?
+When we reloaded the page at localhost:4040/artist/1234/tracks and the server at localhost:4040 rendered the page.
+Web page can cached on serverside so application load much faster. 
+For angular Universal URL need to pass to server side so that it can only work with PathLocationStrategy not with HashLocationStrategy
+https://codecraft.tv/courses/angular/routing/routing-strategies/#_angular_universal
+
+19.	Types of binding in angular.
+1.	One way (property) Binding: 
+Property Binding types: 
+1.	Interpolation: {{PropertyName}} 
+2.	Square Bracket: [PropertyName] 
+3.	Bind- keyword before attribute name e.g.: bind-src="PathPropertyName"
+2.	Event binding: (click)=”clickHandlerMethod()”
+3.	Two-way: [(PropertyName)]
+4.	Class: [NgClass] = “CssClassName”
+5.	Style: [NgStyle] = “CssClassName”
+6.	Attribute: [attr.colspan] = “colspanProperyName”
+20.	What is difference between component and directives injectable in angular.
+Components:
+1.	To register a component we use @Component meta-data annotation.
+2.	Component is a directive which uses shadow DOM to create encapsulated visual behavior called components. Components are typically used to create UI widgets.
+3.	Component is used to break up the application into smaller components.
+4.	Only one component can be present per DOM element.
+5.	TemplateUrl or Template are mandatory in the component.
+Directives:
+1.	To register directives we use @Directive meta-data annotation.
+2.	Directive is used to add behavior to an existing DOM element.
+3.	Directive is use to design re-usable components.
+4.	Many directives can be used per DOM element.
+5.	Directive doesn't use View.
+
+21.	What is RxJs Pipe? 
+RxJs Pipe used to chaining functionalities like .pipe(map(),subscribe());
+
+22.	What is pipes in angular?
+Pipes are a useful feature in Angular. They are a simple way to transform values in an Angular template. There are some built in pipes, but you can also build your own pipes. A pipe takes in a value or values and then returns a value
+Note: you can create custom pipe in angular using Pipe and PipeTransform interface of angular core and implementing transform method of interface.
+
+23.	What is async pipe?	
+When an observable or promise returns something, we use a temporary property to hold the content. Later, we bind the same content to the template. 
+But with the usage of AsyncPipe, the promise or observable can be directly used in a template and a temporary property is not required.					
+OR
+The async pipe is a special kind of impure pipe that subscribes to Observable or Promise and returns the latest value it has emitted. When a new value is emitted, the async pipe marks the component to be checked for changes. When the component gets destroyed, the async pipe unsubscribes automatically to avoid potential memory leaks.
+<span>Wait for it... {{ greeting | async }}</span>
+greet(){
+this.greeting = new Promise<string>((resolve, reject) => { 
+this.resolve = resolve; 
+});
+}
+
+24.	Why angular2 is more popular than angular js?
+25.	How to filter data from list object in angular 2?
+You can use .filter or indexOf.
+<li ng-repeat="x in names | filter : 'i'">
+    		{{ x }}
+  	</li>
+What is difference between template driven form and reactive forms.
+What is interceptor in angular?
+What is difference in Let & Var in TypeScript? 
+How to do form validation in angular
+What are the type of Forms in angular
+How to do unit testing in angular?
+Angular latest version features?
+
+
