@@ -1,0 +1,68 @@
+1.	What is Kubernetes?
+It is an open-source ecosystem for automating deployment, scaling, and managing containerized applications. 
+With this platform, you can decompose your applications into smaller systems (called microservices) while developing; then you can compose (or orchestrate) these systems together while deploying.
+Kubernetes provides you different objects that help you organize your applications microservices into logical units that you can easily manage.
+
+2.	What is Azure Kubernetes Service?
+AKS used to Deploy and manage containerised applications more easily. Azure Kubernetes Service (AKS) offers serverless Kubernetes, an integrated continuous integration and continuous delivery (CI/CD) experience and enterprise-grade security and governance.
+
+3.	What is Azure Container Service (ACS)
+The Azure Container Service (ACS) is a cloud-based container deployment and management service that supports popular open-source tools and technologies or container and container orchestration. ACS is orchestrator-agnostic and allows you to use the container orchestration solution that best suits your needs.
+
+4.	AKS vs ACS
+AKS is the Azure Kubernetes Engine. While you can deploy Kubernetes using the Azure Container Service (ACS), AKS is a managed k8s service. ACS can technically allow you to create k8s cluster.
+
+5.	What is Azure Bus Service
+Microsoft Azure Service Bus is a fully managed enterprise message broker with message queues and publish-subscribe topics. Service Bus is used to decouple applications and services from each other. It provides benefits like load balancing, safe data routing across services, 
+
+6.	What is Azure Event Hub
+Azure Event Hubs is a big data streaming platform. It can receive and process millions of events per second. Data sent to an event hub can be transformed and stored by using any real-time analytics provider or batching/storage adapters (data lake, data warehouse).
+
+7.	What is Azure Event Grid?
+Event Grid is a fully managed event service that enables you to easily manage events across many different Azure services and applications. Made for performance and scale, it simplifies building event-driven applications and serverless architectures.
+
+8.	What is difference between Azure Event Grid vs Event Hub vs Service Bus?
+Service	Purpose	Type	When to use
+Event Grid	Reactive programming	Event distribution (discrete)	React to status changes
+Event Hubs	Big data pipeline	Event streaming (series)	Telemetry and distributed data streaming
+Service Bus	High-value enterprise messaging	Message	Order processing and financial transactions
+
+
+9.	What are the two types of scaling on Azure?
+There are two main ways that an application can scale: Vertical scaling, also called scaling up and down, means changing the capacity of a resource more efficiently. For example, you could move an application to a larger VM size, or you can control the instance of application based on request location and memory utilization. ... Horizontal scaling, also called scaling out and in, means adding or removing instances of a resource.
+
+10.	how to use key vault for sql connection string in azure
+public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
+        webBuilder.ConfigureAppConfiguration((hostingContext, config) =>
+        {
+            var settings = config.Build();
+            config.AddAzureAppConfiguration(options =>
+            {
+                options.Connect(settings["ConnectionStrings:AppConfig"])
+                        .ConfigureKeyVault(kv =>
+                        {
+                            kv.SetCredential(newDefaultAzureCredential());
+                        });
+            });
+        })
+        .UseStartup<Startup>());
+If critical message is not consumed even after 1 minute in service bus topic, then how will you handle this escalation situation?
+
+11.	What is MQTT used for?
+Message Queuing Telemetry Transport is a lightweight network protocol that transports messages between devices. The protocol usually runs over TCP/IP. It supports bi-directional connections, handles unreliable networks, ideal for machine-to-machine (M2M) communication.
+
+12.	How to communicate microservices with each other?
+Used Aggregator design pattern, API Getaway, Database or Shared Data Pattern.
+What are the ways to access DB connection username password from Key Vault?
+
+how to authenticate user from azure AD in web application or api
+
+What if first microservice fail, then how to handle?
+Is Atomicity implemented in your project to handle this situation?
+
+How data come to IOT hub? Or How to send data to IOT hub?
+
+https://abhijitjana.net/2020/05/16/10-azure-services-that-every-net-developers-consultant-and-architects-should-know-and-learn-it-well-part-ii/
+
