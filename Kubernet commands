@@ -1,0 +1,42 @@
+Go to command prompt
+
+Version Check:
+kubectl version --short --client
+
+Update kubernetes dashboard with latest deployment packages
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
+
+Run kubernetes dashboard
+kubectl proxy
+
+Kubernetes Dashboard Link
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+
+
+in new command prompt
+for first time (if not worked )
+az login --tenant a14555b0-886c-49fa-a476-228df6a1486d (tenant id / subscribtionid)
+
+az acr login --name acrname
+az acr login --name acrname
+
+
+az login --use-device-code
+
+--------------------------------------------------------------------
+
+docker tag imagename:latest azurecontainerregistory/imagename:tagName
+docker push azurecontainerregistory/imagename:tagName
+
+
+-------------------------------------------------------
+create new namespace:
+kubectl create namespace namespaceName
+
+create ingress rules for all services
+kubectl apply -f ingressyamlfilepath\ingress-deployment.yaml --namespace namespaceName
+
+create/apply ingress resources service yaml
+kubectl apply -f serviceyamlfilepath\abc_api_service_deploy.yaml --namespace namespaceName
+
+
