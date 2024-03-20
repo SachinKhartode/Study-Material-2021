@@ -449,7 +449,13 @@ We can use Convention based Routing and Attribute Routing in the same project. B
 Yes, We can use multiple URLs to the same action with the use of a routing table.
 
 50.	Difference in Temp data and View Data or View Bag.
-ViewBag and ViewData are used to pass the data from Controller action to View and TempData is used to pass the data from action to another action or one Controller to another Controller.
+ViewBag and ViewData are used to pass the data from Controller action to View and 
+TempData is used to pass the data from action to another action or one Controller to another Controller.
+
+ViewData is a property of controller that exposes an instance of the ViewDataDictionary class. 
+ViewBag is very similar to ViewData. ViewBag is a dynamic property. 
+ViewBag is able to set and get value dynamically and able to add any number of additional fields without converting it to strongly typed. 
+ViewBag is just a wrapper around the ViewData.
 
 51.	What is DB Context pool?
 AddDbContextPool enables a pool for reusable context instances. To use context pooling, use the AddDbContextPool method instead of AddDbContext during service registration.
