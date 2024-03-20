@@ -1,34 +1,57 @@
-Delegate vs Event
+1. Delegate vs Event
+An Event declaration adds a layer of abstraction and protection on the delegate instance. 
+This protection prevents clients of the delegate from resetting the delegate and 
+its invocation list and only allows adding or removing targets from the invocation list.
 
-Static class vs Singleton
+Explanation:
+Delegates support ‘=’ assignment operator, events do not.
+If you write your system with just delegate, the consumer may use ‘=’ operator to attach method without error. 
+Now what issue this would introduce? As we said, the event can be subscribed by many components, so if we want to use delegates we must use ‘+=’ to support many methods. 
+Suppose, someone forgets to use ‘+=’ and uses ‘=’, he will unknowingly detach all attached methods and attach only his method. 
+This will be a big mess as other components will never receive event notification.
 
-Ref vs Out
 
-String vs String Builder
+2. Static class vs Singleton
 
-Thrade vs Task
+3. Ref vs Out
 
-Concorant vs Parallel
+4. String vs String Builder
 
-== vs Equales
+5. Thread vs Task
 
-Array vs ArrayList
+6. Concarant vs Parallel
 
-Encapsulation vs Interface
+7. == vs Equales
 
-Collection vs Generic
+8. Array vs ArrayList
 
-Struct vs Class
+9. Encapsulation vs Interface
 
-Filter vs Middleware
+10. Collection vs Generic
 
-Property vs Variable
+11. Struct vs Class
 
-Throw vs Throw ex
+12. Filter vs Middleware
 
-Real-time example of when to use abstract class and interfere
+13. Property vs Variable
 
-shallow copy vs deep copy
+14. Throw vs Throw ex
 
-Use of asynchronous programming
+15. Real-time example of when to use abstract class and interfere
+
+16. shallow copy vs deep copy
+
+17. Use of asynchronous programming
+
+18. Thread polling
+
+19. WaitAll vs WhenAll
+
+20. Async method vs method
+
+21. Deadlock in thread
+
+22. Thread states
+
+23. How to use abstraction in c#
 
