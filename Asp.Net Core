@@ -452,10 +452,15 @@ Yes, We can use multiple URLs to the same action with the use of a routing table
 ViewBag and ViewData are used to pass the data from Controller action to View and 
 TempData is used to pass the data from action to another action or one Controller to another Controller.
 
-ViewData is a property of controller that exposes an instance of the ViewDataDictionary class. 
-ViewBag is very similar to ViewData. ViewBag is a dynamic property. 
-ViewBag is able to set and get value dynamically and able to add any number of additional fields without converting it to strongly typed. 
-ViewBag is just a wrapper around the ViewData.
+ViewData vs ViewBag
+ViewData is a dictionary of objects that is derived from ViewDataDictionary class and accessible using strings as keys. 
+ViewBag is a dynamic property that takes advantage of the new dynamic features in C# 4.0. 
+ViewData requires typecasting for complex data type and check for null values to avoid error. 
+ViewBag doesn’t require typecasting for complex data type.
+
+TempData Peek vs Keep
+with Peek() you get the value without marking it for deletion
+with Keep() you decide to keep the value for next request after marking it for deletion
 
 51.	What is DB Context pool?
 AddDbContextPool enables a pool for reusable context instances. To use context pooling, use the AddDbContextPool method instead of AddDbContext during service registration.
