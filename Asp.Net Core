@@ -424,7 +424,7 @@ As this middleware displays sensitive information, it is advisable to add it onl
 
 2.	UseExceptionHandler: In MVC Core application, we might want some other controller to handle all exceptions and display custom user-friendly error messages. The UseExceptionHandler extension method allows us to configure custom error handling route. This is useful when an application runs under production environment.
 
-public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+public void Configure(IApplicationBuilder app, IHostingEnvironment env,ILoggerFactory loggerFactory)
 {
         if (env.IsDevelopment() || env.IsStaging())
         {
@@ -433,10 +433,13 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 	else 
        {
          //This error page will display on Prod environment
- //We can log this exception in text files using third   party   logging providers in try catch block.
+         //We can log this exception in text files using third   party   logging providers in try catch block.
 	 app.UseExceptionHandler("/Home/Error");
-         }
- }
+       }
+
+       //Add this below Middleware of code to log in azure app insights
+       loggerFactory.AddApplicationInsights(app.ApplicationServices,LogLevel.Information);
+}
 Visual Studio automatically creates Error.cshtml under Home folder when you create ASP.NET Core project with MVC template.
 
 47.	How to stop request pipeline in middleware?
