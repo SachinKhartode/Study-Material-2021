@@ -19,6 +19,17 @@ State: Static classes do not maintain a state, whereas singletons can have state
 Flexibility: Singletons offer more flexibility due to their ability to implement interfaces and be extended, while static classes are limited to containing static members only.
 
 3. Ref vs Out
+1. The parameter or argument must be initialized first before it is passed to ref.	
+It is not compulsory to initialize a parameter or argument before it is passed to an out.
+
+2. It is not compulsory to initialize a parameter value before using it in a calling method.	
+A parameter value must be initialized within the calling method before its use.
+
+3. Passing a parameter value by Ref is useful when the called method is also needed to modify the pass parameter.	
+Declaring a parameter to an out method is useful when multiple values need to be returned from a function or method.
+
+4. When we use REF, data can be passed bi-directionally.	
+When we use OUT data is passed only in a unidirectional way (from the inner method to the outer method).
 
 4. String vs String Builder
 
