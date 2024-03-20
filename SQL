@@ -1,0 +1,24 @@
+1. Uniqueidentifire in SQL
+Uniqueidentifier is a Microsoft SQL Server data type that is used to store Globally Unique Identifiers (GUIDs). 
+It can store 16 bytes of binary data. It's combination of first 16 hexadesimals
+It's gurantee that it will be identifed uniquely across the tables,so it's used in sql. 
+
+2. Storedprocedure vs Function
+
+3. Primary Key vs Unique Key
+
+4. Clustered vs NonClusterd Index
+
+5. Delete vs Truncate
+
+7. Union vs UnionAll
+
+8. Temp Table vs CTE
+
+9. Tricks to improve Storedprocedure performance
+
+10. Materialized view in sql server
+
+11. Table variable vs Temp table vs Global Table
+
+12.
