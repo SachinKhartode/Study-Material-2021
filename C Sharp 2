@@ -12,6 +12,11 @@ This will be a big mess as other components will never receive event notificatio
 
 
 2. Static class vs Singleton
+Instantiation: Static classes cannot be instantiated, whereas singletons are instantiated but restrict the creation of additional instances.
+Access: Static class members are accessed directly using the class name, while singleton instances are accessed through a specific method or property.
+Inheritance: Static classes cannot be inherited or overridden, while singletons can be extended by subclasses and implement interfaces.
+State: Static classes do not maintain a state, whereas singletons can have state. However, it is important to be cautious with mutable state in singletons, as it can lead to potential concurrency issues.
+Flexibility: Singletons offer more flexibility due to their ability to implement interfaces and be extended, while static classes are limited to containing static members only.
 
 3. Ref vs Out
 
