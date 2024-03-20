@@ -281,6 +281,28 @@ To handle exceptions and display developer friendly message in development envir
 what is delegate in c#?
 Delegate are function pointers hold the reference of the method with a particular parameter list and return type. You can invoke (or call) the method through the delegate instance.
 
+namespace Delegates_demo  
+{  
+    public delegate int Mydelegate(int x,int y);  
+    class sample  
+    {  
+        public static int rectangle(int a, int b)  
+        {  
+            return a * b;  
+        }  
+    } 
+  
+    class Program  
+    {  
+        static void Main(string[] args)  
+        {
+            Mydelegate mdl = new Mydelegate(sample.rectangle);  
+            Console.WriteLine("The Area of rectangle is {0}", mdl(4, 5));  
+            Console.ReadKey();  
+        }  
+    }  
+}  
+
 What is multicast delegate?
 A Multicast Delegate is a delegate that holds the references of more than one function. When we invoke the multicast delegate, then all the functions which are referenced by the delegate are going to be invoked. If you want to call multiple methods using a delegate, then all the method signatures should be the same.
 
