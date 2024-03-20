@@ -1,0 +1,9 @@
+1. How to Secure API? 
+   https://thenewstack.io/5-best-practices-for-securing-your-api-gateway/
+1. Tokan base authentication
+2. Role base access control
+3. Rate limiting
+4. Allowing valid origins via CORS
+5. Log monitoring and Alerting system
+6. Implement inbound and outbound network policies
+
