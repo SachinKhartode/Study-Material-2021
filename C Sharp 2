@@ -40,6 +40,23 @@ The StringBuilder class, on the other hand, is mutable, which means you can modi
 It provides efficient string manipulation by reducing memory allocation and reallocation.
 
 5. Thread vs Task
+Tasks in .NET:
+Tasks, introduced in the Task Parallel Library (TPL), provide an abstraction for asynchronous operations. 
+They represent units of work that can be executed concurrently and allow for efficient utilization of system resources. 
+Tasks rely on thread pool threads, which are managed by the runtime, making them lightweight and scalable.
+
+Threads in .NET:
+Threads are the fundamental units of execution in a program. 
+They allow for concurrent execution of code and can run in parallel on multiple CPU cores. 
+Threads have a direct association with operating system threads and require explicit management by the developer.
+
+Differences:
+- Abstraction Level: Tasks provide a higher-level abstraction, allowing developers to focus on the work being performed rather than lowe level thread management.
+- Resource Utilization: Tasks leverage thread pool threads, which are more efficient in terms of resource allocation and can be dynamically assigned based on the system's load.
+- Synchronization: Tasks inherently support synchronization mechanisms like `await` and `ContinueWith` for coordination and handling of dependencies and chain of tasks.
+- Flexibility: Threads provide more control and flexibility, allowing direct manipulation of thread priorities, thread-local storage, and explicit thread management.
+
+5. WaitAll vs WhenAll
 
 6. Concarant vs Parallel
 
@@ -67,7 +84,7 @@ It provides efficient string manipulation by reducing memory allocation and real
 
 18. Thread polling
 
-19. WaitAll vs WhenAll
+19. 
 
 20. Async method vs method
 
@@ -81,5 +98,7 @@ It provides efficient string manipulation by reducing memory allocation and real
 
 25. stack vs heap
 
-23. How to use abstraction in c#
+26. How to use abstraction in c#
+
+27. Managed vs Unmanaged code
 
