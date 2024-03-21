@@ -64,6 +64,17 @@ WhenAll is parallel means asynchronous execution of all tasks.
 WaitAll is synchronous execution
 
 6. Concarant vs Parallel
+Concurrency is a condition that exists when at least two tasks can start, run, and complete in overlapping time periods. 
+It doesn't necessarily mean that they will ever both be running at the same instant.
+Eg. 
+Using the async and await keywords to write asynchronous code that can run in the background without blocking the main thread.
+Using the Task class and the Task Parallel Library (TPL) to create and manage multiple tasks that can run concurrently on different threads.
+
+Parallelism is a condition that arises when at least two tasks are executing simultaneously. 
+It means that they are literally running at the same time, 
+Eg. 
+Using the Parallel class and its methods, such as Parallel.ForEach and Parallel.For, to execute loops in parallel on multiple threads.
+
 
 7. == vs Equales
 
