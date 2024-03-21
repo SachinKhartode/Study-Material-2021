@@ -56,7 +56,12 @@ Differences:
 - Synchronization: Tasks inherently support synchronization mechanisms like `await` and `ContinueWith` for coordination and handling of dependencies and chain of tasks.
 - Flexibility: Threads provide more control and flexibility, allowing direct manipulation of thread priorities, thread-local storage, and explicit thread management.
 
-5. WaitAll vs WhenAll
+5. WhenAll vs WaitAll
+In case of WhenAll method task execution don't block other tasks. 
+But in WaitAll method task blocks and execute all task sequentially. 
+
+WhenAll is parallel means asynchronous execution of all tasks. 
+WaitAll is synchronous execution
 
 6. Concarant vs Parallel
 
