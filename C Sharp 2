@@ -6,7 +6,7 @@ its invocation list and only allows adding or removing targets from the invocati
 Explanation:
 Delegates support ‘=’ assignment operator, events do not.
 If you write your system with just delegate, the consumer may use ‘=’ operator to attach method without error. 
-Now what issue this would introduce? As we said, the event can be subscribed by many components, so if we want to use delegates we must use ‘+=’ to support many methods. 
+In case when the event is subscribed by many components or clients, they will use ‘+=’ to support many methods. 
 Suppose, someone forgets to use ‘+=’ and uses ‘=’, he will unknowingly detach all attached methods and attach only his method. 
 This will be a big mess as other components will never receive event notification.
 
@@ -32,6 +32,12 @@ Declaring a parameter to an out method is useful when multiple values need to be
 When we use OUT data is passed only in a unidirectional way (from the inner method to the outer method).
 
 4. String vs String Builder
+The string class in C# is immutable, meaning its value cannot be changed once it is created. 
+Every time you modify a string, a new instance is created in memory, which can lead to performance issues when dealing with large or frequently modified strings. 
+However, the string class offers several convenient methods for string manipulation, such as concatenation, splitting, and replacing.
+
+The StringBuilder class, on the other hand, is mutable, which means you can modify its value without creating a new instance each time. 
+It provides efficient string manipulation by reducing memory allocation and reallocation.
 
 5. Thread vs Task
 
@@ -68,6 +74,12 @@ When we use OUT data is passed only in a unidirectional way (from the inner meth
 21. Deadlock in thread
 
 22. Thread states
+
+23. covariance vs contravariance
+
+24. association vs aggregation
+
+25. stack vs heap
 
 23. How to use abstraction in c#
 
