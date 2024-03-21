@@ -77,8 +77,35 @@ Using the Parallel class and its methods, such as Parallel.ForEach and Parallel.
 
 
 7. == vs Equales
+The == Operator compares the reference identity while the Equals() method compares only contents. 
 
 8. Array vs ArrayList
+An Array is strongly-typed. We can store only the same type of data.	
+ArrayList is a non-generic collection type. ArrayList's internal Array is of the object type. So, we can store multiple types of data in ArrayList.
+
+Array stores a fixed number of elements.	
+ArrayList is dynamic in term of capacity. 
+If the number of element exceeds, ArrayList will increase to double its current size.
+
+Array provides better performance than ArrayList.	
+If we are using a large number of ArrayList then it degrades performance because of boxing and unboxing.
+
+Array belongs to namespace System	
+ArrayList belongs to namespace System.Collection
+
+The Array cannot accept null.	
+An ArrayList can accept null.
+
+Example:
+string[] array1=new string[5];
+array1[0]=”Hello”;
+array1[1]=”Bye”;	
+
+ArrayList a1=new ArryList();
+a1.add(null);
+a1.insert(1,”hi”);
+a1.add(3);
+a1.add(8.23);
 
 9. Encapsulation vs Interface
 
