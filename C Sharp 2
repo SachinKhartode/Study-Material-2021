@@ -10,7 +10,6 @@ In case when the event is subscribed by many components or clients, they will us
 Suppose, someone forgets to use ‘+=’ and uses ‘=’, he will unknowingly detach all attached methods and attach only his method. 
 This will be a big mess as other components will never receive event notification.
 
-
 2. Static class vs Singleton
 Instantiation: Static classes cannot be instantiated, whereas singletons are instantiated but restrict the creation of additional instances.
 Access: Static class members are accessed directly using the class name, while singleton instances are accessed through a specific method or property.
@@ -107,9 +106,29 @@ a1.insert(1,”hi”);
 a1.add(3);
 a1.add(8.23);
 
-9. Encapsulation vs Interface
+9. Encapsulation vs Interface (Abstraction) 
+Abstraction solves the problem in the design level.
+Encapsulation solves the problem in the implementation level.
+
+Encapsulation can be implemented with different levels of access to object data. 
+Example, private method cannot be visible to out side of class. 
+Abstraction allows making relevant information visible outside
+
+Encapsulation is data hiding(information hiding) while 
+Abstraction is detail hiding(implementation hiding). 
+
+Abstraction is outer layout in terms of design.
+Encapsulation is inner layout in terms of implementation. 
 
 10. Collection vs Generic
+Collections are made to more effectively organize, store, and modify comparable data.
+Collection support List, Stack, Hashtable, queue etc. 
+Collection has two types: 
+Generic collection like List
+Non Generic collection like ArrayList
+
+Generics enable the use of stronger type-checking, the elimination of casts, 
+and the ability to develop generic algorithms like searching, sorting, comparing etc. 
 
 11. Struct vs Class
 
@@ -118,6 +137,11 @@ a1.add(8.23);
 13. Property vs Variable
 
 14. Throw vs Throw ex
+The difference between “throw” and “throw ex” is that “throw” preserves the stack trace. 
+(the stack trace will point to the method that caused the exception in the first place)
+
+while ”throw ex” does not preserve the stack trace. 
+(we will lose the information about the method that caused the exception in the first place. It will seem like the exception was thrown from the place of its catching and re-throwing).
 
 15. Real-time example of when to use abstract class and interfere
 
