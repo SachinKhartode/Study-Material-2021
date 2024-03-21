@@ -18,16 +18,16 @@ State: Static classes do not maintain a state, whereas singletons can have state
 Flexibility: Singletons offer more flexibility due to their ability to implement interfaces and be extended, while static classes are limited to containing static members only.
 
 3. Ref vs Out
-1. The parameter or argument must be initialized first before it is passed to ref.	
+I. The parameter or argument must be initialized first before it is passed to ref.	
 It is not compulsory to initialize a parameter or argument before it is passed to an out.
 
-2. It is not compulsory to initialize a parameter value before using it in a calling method.	
+II. It is not compulsory to initialize a parameter value before using it in a calling method.	
 A parameter value must be initialized within the calling method before its use.
 
-3. Passing a parameter value by Ref is useful when the called method is also needed to modify the pass parameter.	
+III. Passing a parameter value by Ref is useful when the called method is also needed to modify the pass parameter.	
 Declaring a parameter to an out method is useful when multiple values need to be returned from a function or method.
 
-4. When we use REF, data can be passed bi-directionally.	
+IV. When we use REF, data can be passed bi-directionally.	
 When we use OUT data is passed only in a unidirectional way (from the inner method to the outer method).
 
 4. String vs String Builder
@@ -146,6 +146,13 @@ while ”throw ex” does not preserve the stack trace.
 15. Real-time example of when to use abstract class and interfere
 
 16. shallow copy vs deep copy
+Both are used to duplicating objects. 
+Shallow copy copy all the member references variables to an another object. 
+That mean changes made in original object will reflect into copied one as well. 
+because newly coppied object also refer to same memory location. 
+
+Deep copy copy everything from original object in to new object and 
+memory reference will different for both of them. 
 
 17. Use of asynchronous programming
 
