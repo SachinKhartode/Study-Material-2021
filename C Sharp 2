@@ -144,6 +144,8 @@ while ”throw ex” does not preserve the stack trace.
 (we will lose the information about the method that caused the exception in the first place. It will seem like the exception was thrown from the place of its catching and re-throwing).
 
 15. Real-time example of when to use abstract class and interfere
+Abstract class examples would be Vehicle, BankAccount, Animal because there would be child class for this entities with different behavior. 
+Interfere examples will be Logger, Notifications because this interferes will be used anywhere in the project. 
 
 16. shallow copy vs deep copy
 Both are used to duplicating objects. 
@@ -158,7 +160,7 @@ memory reference will different for both of them.
 
 18. Thread polling
 
-19. 
+19. Yeild keyword
 
 20. Async method vs method
 
