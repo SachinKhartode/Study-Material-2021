@@ -133,6 +133,26 @@ and the ability to develop generic algorithms like searching, sorting, comparing
 11. Struct vs Class
 
 12. Filter vs Middleware
+Middleware in .NET Core
+It operates at a lower level and is part of the request pipeline.
+Executed for every request and can participate in the request-handling process from start to finish.
+Applied globally to the entire application or conditionally to specific routes.
+Configured in the Startup.cs file and used for broader concerns like authentication, logging, and routing.
+Examples include UseAuthentication, UseLogging, and UseMvc.
+Used for handling cross-cutting concerns at a lower level, not limited to MVC.
+Has direct access to the HTTP Context and can operate on the request and response at a lower level.
+The execution order is determined by the order in which the middleware components are added to the pipeline in the Startup.cs file.
+
+Filters in .NET Core
+Filter has access to a wider MVC Context which helps us to access routing data and model binding information.
+Applied during the execution of MVC actions.
+Applied to controller actions in MVC.
+Used for MVC-specific concerns such as logging, authorization, and validation.
+Examples include AuthorizeAttribute, ActionFilterAttribute, and ResultFilterAttribute.
+Used for adding cross-cutting concerns related to MVC actions.
+Has access to the HttpContext but primarily focuses on MVC-related processing.
+The order of execution is determined by the order in which the filters are applied.
+Filters can be applied globally or on individual controllers/actions.
 
 13. Property vs Variable
 
