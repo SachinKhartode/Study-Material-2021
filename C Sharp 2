@@ -177,8 +177,18 @@ association is relationship among the objects like one to one, one to many, many
 aggregation is special type of association among the objects like Employee will have association with one Department only. 
 composition is special type of aggregation among the objects like Company will have multiple locations and deleting Company will delete Company Locations. 
 
-
 25. stack vs heap
+Stack is an array of memory
+Heap is an area where data store in chunks
+
+Stack data will be retrieved in LIFO order
+Heap data will be retrieved in any order
+
+Value type variables stores on Stack memory like int, flot, double, char, short, long. 
+Reference type variables and object stores on heap memory like string, class, delegate, object. 
+
+Stack provide faster data retrievel
+Heap is slow compare to stack. 
 
 26. How to use abstraction in c#
 
