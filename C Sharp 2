@@ -168,7 +168,11 @@ memory reference will different for both of them.
 
 23. covariance vs contravariance
 
-24. association vs aggregation
+24. association vs aggregation vs composition
+association is relationship among the objects like one to one, one to many, many to many. 
+aggregation is special type of association among the objects like Employee will have association with one Department only. 
+composition is special type of aggregation among the objects like Company will have multiple locations and deleting Company will delete Company Locations. 
+
 
 25. stack vs heap
 
