@@ -131,6 +131,19 @@ Generics enable the use of stronger type-checking, the elimination of casts,
 and the ability to develop generic algorithms like searching, sorting, comparing etc. 
 
 11. Struct vs Class
+Struct is value type
+Class is reference type
+
+Struct stores on Stack
+Class stores on Heap
+
+Struct don't have constructer and destructor
+Class do have constructer and destructor
+
+Struct instantiated without new keyword
+Class instantiated with new keyword
+
+Struct don't inherit from other Struct like class they inherit from System.ValueType
 
 12. Filter vs Middleware
 Middleware in .NET Core
