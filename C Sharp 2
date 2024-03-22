@@ -174,5 +174,17 @@ memory reference will different for both of them.
 
 26. How to use abstraction in c#
 
-27. Managed vs Unmanaged code
+27. What is Garbage collection
+The garbage collector (GC) serves as an automatic memory manager. 
+The garbage collector manages the allocation and release of memory for an application. 
+Therefore, developers don't have to write code to perform memory management tasks. 
+Automatic memory management can eliminate common problems such as forgetting to free an object and causing a memory leak or attempting to access freed memory for an object that's already been freed.
+
+When an object is created then it will allocate the memory in the heap then garbage collection checks the available space for the newly created objects,
+if the available space is not adequate to allot the space then it automatically garbage collect the unused objects. 
+If all are valid referenced objects then it gets additional space from the processor.
+
+28. What are the generations in Garbage collection. 
+
+29. Managed vs Unmanaged code
 
