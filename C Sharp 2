@@ -195,7 +195,18 @@ This means that developers do not need to worry about Memory Management issues s
 In Unmanaged Code, Memory Management is the responsibility of the developer.
 
 30. How to dispose or handle unmanaged code in c#
+I. Use Dispose method of IDisposable interface
+public void Dispose()
+{
+    // Dispose of unmanaged resources.
+    Dispose(true);
+    // call Suppress finalization, It will prevent GC to call finalizer. 
+    GC.SuppressFinalize(this);
+}
+II. Use Using statement for database connection, network connection, file handling etc. 
 
 31. Destructor vs Finalizer
 Destructors are explicitly defined and called by the programmer or the compiler, 
 while finalizers are implicitly defined and called by the GC.
+
+
