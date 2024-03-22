@@ -167,7 +167,12 @@ Has access to the HttpContext but primarily focuses on MVC-related processing.
 The order of execution is determined by the order in which the filters are applied.
 Filters can be applied globally or on individual controllers/actions.
 
-13. Property vs Variable
+13. Extension Method
+It's allows to add new functionality to existing types without modifying their source code.
+It's static method of static class. 
+it's use "this" modifier in first parameter. 
+First parameter would be the class type for its extended. 
+It's benefit to extend the functionality of sealed classes also. 
 
 14. Throw vs Throw ex
 The difference between “throw” and “throw ex” is that “throw” preserves the stack trace. 
