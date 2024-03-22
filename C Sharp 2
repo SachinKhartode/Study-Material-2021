@@ -167,6 +167,10 @@ memory reference will different for both of them.
 22. Thread states
 
 23. covariance vs contravariance
+Covariance preserve assignment compatibility between parent and child relationship during dynamic polymorphism
+And Contravariance is just opposite of it. 
+Innumerable<Animal> lstAnimal = new List<Dog>();
+This above line don't support in 3.5 but it's support in 4.0 bcoz of this feature. 
 
 24. association vs aggregation vs composition
 association is relationship among the objects like one to one, one to many, many to many. 
