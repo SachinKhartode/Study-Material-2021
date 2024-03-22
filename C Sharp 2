@@ -185,6 +185,9 @@ if the available space is not adequate to allot the space then it automatically 
 If all are valid referenced objects then it gets additional space from the processor.
 
 28. What are the generations in Garbage collection. 
+Generation 0 identifies a newly created object that has never been marked for collection
+Generation 1 identifies an object that has survived a GC (marked for collection but not removed because there was sufficient heap space)
+Generation 2 identifies an object that has survived more than one sweep of the GC.
 
 29. Managed vs Unmanaged code
 
