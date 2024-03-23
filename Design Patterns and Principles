@@ -6,6 +6,8 @@ Unit of Work design pattern
 
 
 ----------------------------GOF Gang of Four Design pattern--------------------------
+Factory Method Design pattern
+Abstract Factory Method Design pattern
 
 
 
@@ -21,8 +23,14 @@ Service Registry Design pattern
 Asynchronous Messaging Design pattern
 
 ----------------------------Other c# Design patterns----------------------------------
-Inversion O Control
-
-
+Inversion Of Control pattern
+Factory Pattern
+Facade pattern
+Iterator pattern
+Adapter pattern
+Decorator pattern
+Command pattern
+Composite pattern
+Template Method pattern
 
 
