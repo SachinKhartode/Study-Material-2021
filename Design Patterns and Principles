@@ -10,6 +10,10 @@ Unit of Work design pattern
 ----------------------------GOF Gang of Four Design pattern--------------------------
 A. Creational Design Pattern
 Factory Method
+In Factory pattern, we create the object without exposing the creation logic. 
+In Factory method pattern, an interface is used for creating an object but lets the subclass decide which class to instantiate. 
+The creation of an object is done when it is required. The Factory method allows a class later instantiation to subclasses.
+
 Abstract Factory
 Builder
 Prototype
@@ -52,6 +56,10 @@ Aggregator Design pattern
 Event Sourcing Design pattern
 
 ----------------------------Other c# Design patterns----------------------------------
+Factory Design pattern
+In Factory patterns we create the object of the Class without Exposing the Creation/Instantiation Logic to the User who wants to create the Object
+and then return the newly Created object using the Common Interface which is inherited  by the Class
+
 Inversion Of Control pattern IOC
 Separation of Concern pattern SOC
 
