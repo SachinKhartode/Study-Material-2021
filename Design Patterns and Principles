@@ -1,14 +1,41 @@
 ----------------------------Architecture Design patterns ---------------------------
 MVC architecture design pattern
+MVP
+MVVM
 Clean Architecture design pattern
 Repository Design pattern
 Unit of Work design pattern
 
 
 ----------------------------GOF Gang of Four Design pattern--------------------------
-Factory Method Design pattern
-Abstract Factory Method Design pattern
+A. Creational Design Pattern
+Factory Method
+Abstract Factory
+Builder
+Prototype
+Singleton
 
+B. Structural Design Patterns
+Adapter
+Bridge
+Composite
+Decorator
+Façade
+Flyweight
+Proxy
+
+C. Behavioral Design Patterns
+Chain of Responsibility
+Command
+Interpreter
+Iterator
+Mediator
+Memento
+Observer
+State
+Strategy
+Visitor
+Template Method
 
 
 ----------------------------Microsevices Design pattern------------------------------
@@ -21,16 +48,10 @@ Materialized View Design pattern
 Circuit Breaker Design pattern
 Service Registry Design pattern
 Asynchronous Messaging Design pattern
+Aggregator Design pattern
+Event Sourcing Design pattern
 
 ----------------------------Other c# Design patterns----------------------------------
-Inversion Of Control pattern
-Factory Pattern
-Facade pattern
-Iterator pattern
-Adapter pattern
-Decorator pattern
-Command pattern
-Composite pattern
-Template Method pattern
-
+Inversion Of Control pattern IOC
+Separation of Concern pattern SOC
 
