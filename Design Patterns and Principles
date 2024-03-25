@@ -10,11 +10,17 @@ Unit of Work design pattern
 ----------------------------GOF Gang of Four Design pattern--------------------------
 A. Creational Design Pattern
 Factory Method
-In Factory pattern, we create the object without exposing the creation logic. 
-In Factory method pattern, an interface is used for creating an object but lets the subclass decide which class to instantiate. 
+In Factory pattern, we create the object without exposing the object creation logic using normal interfere. 
+But In Factory method pattern, an interface is used for creating an object but lets the subclass decide which class to instantiate. 
 The creation of an object is done when it is required. The Factory method allows a class later instantiation to subclasses.
 
 Abstract Factory
+The Abstract Factory Design Pattern gives us a way to encapsulate the creation of a group of common objects without exposing the type of objects that will be returned. 
+In short, the abstract factory design pattern is a factory of factories in which the client selects the factory that would best fit for his needs.
+ 
+With the Abstract Factory Design Pattern, the concrete group of classes returned is completely abstracted for the client, 
+where the client's only concern is to select the factory and call its methods to return their specific objects.
+
 Builder
 Prototype
 Singleton
