@@ -15,7 +15,7 @@ But In Factory method pattern, an interface is used for creating an object but l
 The creation of an object is done when it is required. The Factory method allows a class later instantiation to subclasses.
 
 Abstract Factory
-The Abstract Factory Design Pattern gives us a way to encapsulate the creation of a group of common objects without exposing the type of objects that will be returned. 
+The Abstract Factory Design Pattern gives us a way to encapsulate the creation logic for group of common objects without exposing the type of objects that will be returned. 
 In short, the abstract factory design pattern is a factory of factories in which the client selects the factory that would best fit for his needs.
  
 With the Abstract Factory Design Pattern, the concrete group of classes returned is completely abstracted for the client, 
