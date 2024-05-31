@@ -20,9 +20,18 @@ Azure Function App Question:
    You are charged for compute resources only when functions are running. 
 
 3. What is cold Start in function app
+   When there is no warm instance available to process work, 
+   Azure function runtime initialize new instance of function app to process work is called cold start. 
 
-4. How to avoid cold start in function app
+4. How to avoid cold start in function app. 
+   Consumption plan: 
+   Premium Plan: 1 instance always be running there continuously which help to reduce impact of cold start. 
+   Dedicated App Service Plan: Set Always On property as true
+
+   Enabling function to run from package also reduce the cold start time. 
+   Add this setting WEBSITE_RUN_FROM_PACKAGE with package URL in app setting. 
+   Package location can be from wwwroot folder of function app Or any BLOB storage also.
 
 5. What is durable function app
 
-6. What and where does durable function app store state. 
+6. What and where does durable function app store it's state. 
