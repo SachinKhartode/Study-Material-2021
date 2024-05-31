@@ -7,3 +7,22 @@
 5. Log monitoring and Alerting system
 6. Implement inbound and outbound network policies
 
+
+Azure Function App Question:
+1. what are the function app hosting plans in azure
+   1. Consumption
+   2. Premium  - Run application with no delay after being idle. 
+   3. Dedicated - Run function within regular App Service Plans rates. Manual or Auto scaling. 
+
+2. What is consumption plan hosting in function app
+   Azure function app instances dynamically added or removed based on incoming events. 
+   It's scale automatically, 
+   You are charged for compute resources only when functions are running. 
+
+3. What is cold Start in function app
+
+4. How to avoid cold start in function app
+
+5. What is durable function app
+
+6. What and where does durable function app store state. 
