@@ -33,5 +33,11 @@ Azure Function App Question:
    Package location can be from wwwroot folder of function app Or any BLOB storage also.
 
 5. What is durable function app
+Durable Functions is a feature of Azure Functions that lets you write stateful functions in a serverless compute environment
 
 6. What and where does durable function app store it's state. 
+Azure Storage is the default storage provider for Durable Functions. 
+It uses queues, tables, and blobs to persist orchestration and entity state. 
+It also uses blobs and blob leases to manage partitions. 
+In many cases, the storage account used to store Durable Functions runtime state is the same as the default storage account used by Azure Functions (AzureWebJobsStorage). 
+However, it's also possible to configure Durable Functions with a separate storage account.
