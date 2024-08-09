@@ -1,1 +1,10 @@
-
+1. When to use Cosmos db or Sql db or Blob storage
+A. Data can be in different forms like 
+   1. Unstructured: Video, Audio, text
+   2. Structured: excel, csv
+   3. Semi Structured: json, xml, yaml
+      eg. Product1 and Product2 can have different property
+so, Cosmos db will be used for Semi structured data. 
+Sql db will be used for Structured data. 
+Blob storage will be used for unstructured data. 
+   
