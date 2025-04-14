@@ -3,8 +3,14 @@ MVC architecture design pattern
 MVP
 MVVM
 Clean Architecture design pattern
+
 Repository Design pattern
-Unit of Work design pattern
+It's help to abstract data access logic and provide clean separation between Data Access Layer and Business Layer. 
+It's add extra layer of abstraction in between, so it's help for Mantainbility, testability, and flexibility of application. 
+
+Unit of Work design pattern:
+It's help to maintain dependant DB transactions in repository. 
+eg. If dependant transaction fail then rollback previous transaction. 
 
 
 ----------------------------GOF Gang of Four Design pattern--------------------------
