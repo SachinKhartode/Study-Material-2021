@@ -10,9 +10,9 @@ Unit of Work design pattern
 ----------------------------GOF Gang of Four Design pattern--------------------------
 A. Creational Design Pattern
 Factory Method
-In Factory pattern, we create the object without exposing the object creation logic using normal interfere. 
-But In Factory method pattern, an interface is used for creating an object but lets the subclass decide which class to instantiate. 
-The creation of an object is done when it is required. The Factory method allows a class later instantiation to subclasses.
+In "Factory pattern", we create the object without exposing the object creation logic using normal interfere. 
+But In "Factory method pattern", an interface is used for creating an object but lets the subclass decide which class to instantiate. 
+The creation of an object is done when it is required. The Factory method allows a class later instantiation to subclasses. and most important it's promote lossed coupling code. 
 
 Abstract Factory
 The Abstract Factory Design Pattern gives us a way to encapsulate the creation logic for group of common objects without exposing the type of objects that will be returned. 
@@ -64,9 +64,14 @@ Event Sourcing Design pattern
 ----------------------------Other c# Design patterns----------------------------------
 Factory Design pattern
 In Factory patterns we create the object of the Class without Exposing the Creation/Instantiation Logic to the User who wants to create the Object
-and then return the newly Created object using the Common Interface which is inherited  by the Class
+and then return the newly Created object using the Common Interface which is inherited  by the Class, 
+it's centralize object creation and most importantly it's promote loose coupling object creation process. 
 
-Inversion Of Control pattern IOC
+Inversion Of Control pattern IOC:
+It's not a design pattern, it's design principal or it's an idea. 
+Instead of creating objects of class dependencies, let them inject through Dependency Injection (eg. via constrictor) that is what IOC is. 
+Object creation process is taken care by some other class. 
+
 Separation of Concern pattern SOC
 
 ----------------------------SOLID Principles------------------------------------------
