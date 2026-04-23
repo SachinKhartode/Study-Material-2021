@@ -355,6 +355,10 @@ Binary search works on a sorted array. The value is compared with the middle ele
 
 What is async and await in C#?
 Async and await in C# are the code markers, which marks code positions from where the control should resume after a task completes.
+OR
+Async mark method as asynchronous, and tells compiler that this method may pause execution and return Task, so caller (outside) method can continue without blocking.
+Await cooperates with Async to pause the method execution without blocking the thread, until the awaited task completes.
+Task represents the promise of future complition, that enable the caller to continue the other executions and latter resume when the awaited task finishes.
 
 What is extension method?
 What is indexer in c#?
